@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+    <title>to the moon</title>
+    <style>
+
+    body {
+      overflow: ;
+      background: linear-gradient(#444, #111);
+    }
+
+    .moonimage {
+      background-image: url("images/moonhd.png");
+      background-size: contain;
+      position: relative;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      width: 50vw;
+      height: 50vw;
+    }
+    .poem span {
+      color: #eee;
+      font-size: 1.2vw;
+      text-shadow: 0px 0px 5px black;
+      position: absolute;
+      width;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .poem img {
+      position: relative;
+    }
+    .poemtitle {
+      font-size: 120%;
+      color: #222;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      position: absolute;
+    }
+
+    #star {
+      background-color: white;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      z-index: 255;
+      transform: translate(22vw, -67svw);
+      animation-name: starspin;
+    }
+
+    @keyframes starspin {
+      0% {transform: rotate(0deg);}
+      50% {transform: rotate(180deg);}
+      100% {transform: rotate(360deg);}
+    }
+    </style>
+    <script>
+      function stars() {
+      	var star = document.getElementById("star");
+        var x = 0;
+        var y = 0;
+        var id = setInterval(frame, 1000);
+          function frame() {
+          	 x = Math.floor(Math.random() * 99);
+             y = Math.floor(Math.random() * 101);
+             star.style.transform = 'translate(' + x + 'vw, ' + '-' + y + 'vw)';
+          }
+      }
+      window.onload = stars;
+    </script>
+  </head>
+  <body>
+    <div class="poemtitle">
+      <h1>The Moon</h1>
+      <span>By Percy Bysshe Shelley</span>
+    </div>
+    <div class="poem">
+      <img src="images/moonhd.png" class="moonimage"/>
+      <span>
+        AND, like a dying lady lean and pale,<br>
+        Who totters forth, wrapp'd in a gauzy veil,<br>
+        Out of her chamber, led by the insane<br>
+        And feeble wanderings of her fading brain,<br>
+        The mood arose up in the murky east,<br>
+        A white and shapeless mass.<br>
+        <br>
+        Art thou pale for weariness<br>
+        Of climbing heaven and gazing on the earth,<br>
+        Wandering companionless<br>
+        Among the stars that have a different birth,<br>
+        And ever changing, like a joyless eye<br>
+        That finds no object worth its constancy?<br>
+      </span>
+    </div>
+    <div id="star"></div>
+</html>
