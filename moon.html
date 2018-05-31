@@ -2,10 +2,10 @@
 <html>
   <head>
     <title>to the moon</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <style>
-
     body {
-      overflow: ;
+      overflow: hidden;
       background: linear-gradient(#444, #111);
     }
 
@@ -13,13 +13,22 @@
       background-image: url("images/moonhd.png");
       background-size: contain;
       position: relative;
+      opacity: 0.2;
       left: 50%;
-      transform: translate(-50%, 0%);
+      transform: translate(-50%, 50%);
       width: 50vw;
       height: 50vw;
     }
+
+    @keyframes rise {
+      0% {transform: translate(-50%, 50%); opacity: 0.2;}
+      100% {transform: translate(-50%, 0%); opacity: 0.7;}
+    }
+
+
     .poem span {
       color: #eee;
+      opacity: 0.8;
       font-size: 1.2vw;
       text-shadow: 0px 0px 5px black;
       position: absolute;
@@ -33,44 +42,82 @@
       position: relative;
     }
     .poemtitle {
+      color: #eee;
       font-size: 120%;
-      color: #222;
       top: 10%;
       left: 50%;
       transform: translate(-50%, 0%);
       position: absolute;
+      z-index: 255;
+    }
+
+    #sstar {
+      background-color: white;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      z-index: 0;
+      transform: translate(0vw, 0vw);
+      /* animation-name: starspin;
+      animation-duration: 0.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear; */
     }
 
     #star {
       background-color: white;
-      width: 50px;
-      height: 50px;
+      width: 10px;
+      height: 10px;
       position: absolute;
-      z-index: 255;
-      transform: translate(22vw, -67svw);
-      animation-name: starspin;
+      z-index: 0;
+      transform: translate(0vw, 0vw);
     }
 
-    @keyframes starspin {
-      0% {transform: rotate(0deg);}
-      50% {transform: rotate(180deg);}
-      100% {transform: rotate(360deg);}
-    }
     </style>
     <script>
+    /*
       function stars() {
-      	var star = document.getElementById("star");
-        var x = 0;
-        var y = 0;
-        var id = setInterval(frame, 1000);
-          function frame() {
-          	 x = Math.floor(Math.random() * 99);
-             y = Math.floor(Math.random() * 101);
-             star.style.transform = 'translate(' + x + 'vw, ' + '-' + y + 'vw)';
+      	var sstar = document.getElementById("sstar");
+        var die = setInterval(create, 10)
+          function create() {
+            var style = "";
+            var star = $(sstar).clone().appendTo(sstar).attr("id","star");
+            var rotate = setInterval(rotate, 10)
+            function rotate {
+
+            }
+          }
+
+        var destroy = setInterval(destroy, 1000)
+          function destroy() {
+            $(star).remove();
           }
       }
       window.onload = stars;
+      */
+    /*have it so a string is manipulated on a timer to change the position each star is set to
+    the string on every star is changed to change rotation
+    the location on that string stays the same*/
     </script>
+
+    <!-- function create() {
+      var star = $(sstar).clone().appendTo(sstar).attr("id","star");
+      var x = Math.floor(Math.random() * 98);
+      var y = Math.floor(Math.random() * 101);
+      $(star).css("transform","translate(" + x + "vw, -" + y );
+
+      var id = setInterval(frame, 10);
+        function frame() {
+          var star = document.getElementById("star");
+           $('div[id="star"]').css(
+           if (rot >= 180) {
+              rot = 0
+           }
+          else {
+              rot++
+          }
+        }
+    } -->
   </head>
   <body>
     <div class="poemtitle">
@@ -78,7 +125,7 @@
       <span>By Percy Bysshe Shelley</span>
     </div>
     <div class="poem">
-      <img src="images/moonhd.png" class="moonimage"/>
+      <div class="moonimage"></div>
       <span>
         AND, like a dying lady lean and pale,<br>
         Who totters forth, wrapp'd in a gauzy veil,<br>
@@ -95,5 +142,18 @@
         That finds no object worth its constancy?<br>
       </span>
     </div>
-    <div id="star"></div>
+    <div id="sstar"></div>
+    <script>
+    $("document").ready(function(){
+      $(".moonimage").mouseover(function(){
+        $(this).css("animation-name", "rise");
+        $(this).css("animation-duration", "3s");
+        $(this).css("animation-fill-mode", "forwards");
+      });
+    });
+    </script>
+    <!--       animation-name: rise;
+          animation-duration: 1s;
+          animation-fill-mode: forwards;
+    -->
 </html>
