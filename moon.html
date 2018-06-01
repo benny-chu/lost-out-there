@@ -7,6 +7,7 @@
     body {
       overflow: hidden;
       background: linear-gradient(#444, #111);
+      background-image: url("images/star.gif");
     }
 
     .moonimage {
@@ -51,73 +52,7 @@
       z-index: 255;
     }
 
-    #sstar {
-      background-color: white;
-      width: 10px;
-      height: 10px;
-      position: absolute;
-      z-index: 0;
-      transform: translate(0vw, 0vw);
-      /* animation-name: starspin;
-      animation-duration: 0.5s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear; */
-    }
-
-    #star {
-      background-color: white;
-      width: 10px;
-      height: 10px;
-      position: absolute;
-      z-index: 0;
-      transform: translate(0vw, 0vw);
-    }
-
     </style>
-    <script>
-    /*
-      function stars() {
-      	var sstar = document.getElementById("sstar");
-        var die = setInterval(create, 10)
-          function create() {
-            var style = "";
-            var star = $(sstar).clone().appendTo(sstar).attr("id","star");
-            var rotate = setInterval(rotate, 10)
-            function rotate {
-
-            }
-          }
-
-        var destroy = setInterval(destroy, 1000)
-          function destroy() {
-            $(star).remove();
-          }
-      }
-      window.onload = stars;
-      */
-    /*have it so a string is manipulated on a timer to change the position each star is set to
-    the string on every star is changed to change rotation
-    the location on that string stays the same*/
-    </script>
-
-    <!-- function create() {
-      var star = $(sstar).clone().appendTo(sstar).attr("id","star");
-      var x = Math.floor(Math.random() * 98);
-      var y = Math.floor(Math.random() * 101);
-      $(star).css("transform","translate(" + x + "vw, -" + y );
-
-      var id = setInterval(frame, 10);
-        function frame() {
-          var star = document.getElementById("star");
-           $('div[id="star"]').css(
-           if (rot >= 180) {
-              rot = 0
-           }
-          else {
-              rot++
-          }
-        }
-    } -->
   </head>
   <body>
     <div class="poemtitle">
@@ -126,6 +61,7 @@
     </div>
     <div class="poem">
       <div class="moonimage"></div>
+      <a href="index.html">
       <span>
         AND, like a dying lady lean and pale,<br>
         Who totters forth, wrapp'd in a gauzy veil,<br>
@@ -141,8 +77,8 @@
         And ever changing, like a joyless eye<br>
         That finds no object worth its constancy?<br>
       </span>
+      </a>
     </div>
-    <div id="sstar"></div>
     <script>
     $("document").ready(function(){
       $(".moonimage").mouseover(function(){
@@ -152,8 +88,4 @@
       });
     });
     </script>
-    <!--       animation-name: rise;
-          animation-duration: 1s;
-          animation-fill-mode: forwards;
-    -->
 </html>

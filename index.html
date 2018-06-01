@@ -1,9 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>feeling really floaty, yeah?</title>
-  </head>
-  <body>
-    <a href="moon.html"><img src="images/moonhd.png"/></a>
-  </body>
+<head>
+<title>sometimes i get lost...</title>
+<style>
+	body {
+		background-color: #000000;
+    background-image: url("images/dark.gif");
+    padding: 0px;
+    margin: 0px;
+    margin-top: 5vw;
+  }
+
+  .red {
+      border-left-color: #ce1e2a;
+      border-right-color: rgba(0, 0, 0, 0);
+      border-top-color: rgba(0, 0, 0, 0);
+      border-bottom-color: rgba(0, 0, 0, 0);
+      border-style: solid;
+      border-width: 8vh;
+      width: 0px;
+      height: 0px;
+      float: left;
+  }
+
+  .blue {
+      border-right-color: #1a56ce;
+      border-left-color: rgba(0, 0, 0, 0);
+      border-top-color: rgba(0, 0, 0, 0);
+      border-bottom-color: rgba(0, 0, 0, 0);
+      border-style: solid;
+      border-width: 6.8vh;
+      width: 0px;
+      height: 0px;
+      float: right;
+  }
+
+  .link:hover span {
+    padding-right: 5%;
+  }
+
+  .headertext {
+    color: white;
+    font-family: Verdana;
+    border-style: dotted;
+    border-width: 1px;
+    border-color: #ce1e2a;
+    width: 50%;
+    text-shadow: 0px 0px 1vw #1a56ce, 0px 0px 1vw #1a56ce, 0px 0px 1vw #1a56ce;
+    font-size: 8vh;
+    padding-top: 3vh;
+    padding-bottom: 0.5vh;
+    float: left;
+  }
+
+  .headernews {
+    float: left;
+    font-size: 2vh;
+    text-align: center;
+    width: 100%;
+    text-shadow: 0px 0px 1vw #ce1e2a, 0px 0px 1vw #ce1e2a, 0px 0px 1vw #ce1e2a;
+    padding-bottom: 0px;
+  }
+
+  .infotext {
+    color: white;
+    text-shadow: 0px 0px 1vw #ce1e2a, 0px 0px 1vw #ce1e2a, 0px 0px 1vw #ce1e2a;
+    border-style: dotted;
+    border-width: 1px;
+    border-color: #1a56ce;
+    width: 50%;
+    font-size: 5vh;
+    float: right;
+    padding-top: 3.8vh;
+    padding-bottom: 3.8vh;
+    padding-left: 1vw;
+  }
+
+  .space {
+    clear: both;
+  }
+
+  a, a:link, a:visited, a:hover, a:active {
+    color: inherit;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <span class="headertext">feelin' really floaty, yea?<span class="headernews">"low pressure"</span></span>
+    <div class="red"></div>
+  </div>
+  <div class="space"><br></div>
+  <div class="link">
+    <a href="moon.html">
+      <span class="infotext">moon</span>
+      <div class="blue"></div>
+    </a>
+  </div>
+  <div class="space"><br></div>
+  <div class="link">
+    <a href="">
+      <span class="infotext">coming soon :)</span>
+      <div class="blue"></div>
+    </a>
+  </div>
+</body>
 </html>
